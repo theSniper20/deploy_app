@@ -10,8 +10,11 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\HospitalRegisterController; // Add this import
+use App\Http\Controllers\Auth\HospitalAuthenticatedSessionController; // Add this import
 
 Route::middleware('guest')->group(function () {
+    /*
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
@@ -21,6 +24,18 @@ Route::middleware('guest')->group(function () {
                 ->name('login');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
+    */
+     // Hospital Register
+     Route::get('hospital/register', [HospitalRegisterController::class, 'showRegistrationForm'])
+     ->name('hospital.register');
+
+    Route::post('hospital/register', [HospitalRegisterController::class, 'register']);
+
+    // Hospital Login
+    Route::get('hospital/login', [HospitalAuthenticatedSessionController::class, 'create'])
+     ->name('hospital.login');
+
+    Route::post('hospital/login', [HospitalAuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
@@ -54,6 +69,8 @@ Route::middleware('auth')->group(function () {
 
     Route::put('password', [PasswordController::class, 'update'])->name('password.update');
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+    /*Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->name('logout');*/
+    Route::post('logout', [HospitalAuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });

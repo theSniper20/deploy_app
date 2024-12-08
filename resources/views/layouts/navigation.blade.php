@@ -9,13 +9,40 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
-
+             
                 <!-- Navigation Links -->
+                <!-- Link1-->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                   <!-- Link4 -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('devices.index')" :active="request()->routeIs('devices')">
+                        materiels 
+                    </x-nav-link>
+                </div>
+                <!-- Link2-->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('departments.index')" :active="request()->routeIs('departments')">
+                        Departements
+                    </x-nav-link>
+                </div>
+                <!-- Link3-->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('services.index')" :active="request()->routeIs('services')">
+                        Services
+                    </x-nav-link>
+                </div>
+              
+                <!-- Link4 -->
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('scans.index')" :active="request()->routeIs('scans')">
+                        images 
+                    </x-nav-link>
+                </div>
+
             </div>
 
             <!-- Settings Dropdown -->
