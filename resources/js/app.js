@@ -6,7 +6,7 @@ import axios from 'axios';
 //import { init as dicomImageLoaderInit } from '@cornerstonejs/dicom-image-loader';
 
 // Set up Axios defaults (optional)
-axios.defaults.baseURL = window.location.origin; // Adjust the base URL as needed
+axios.defaults.baseURL = 'https://deploy-app-2fez.onrender.com'; // Adjust the base URL as needed
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // Common header for AJAX requests
 
 // Make Axios available globally
