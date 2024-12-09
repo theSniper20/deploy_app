@@ -45,10 +45,11 @@
             rel="stylesheet"
             />
             <!--<link rel="stylesheet" href="resources/css/bootstrap-multiselect.min.css" />-->
-       <!-- @vite(['resources/css/app.css','resources/js/app.js'])-->
+       @vite(['resources/css/app.css','resources/js/app.js'])
         <!-- Include Vite Build Assets -->
+		<!--
         <link rel="stylesheet" href="{{ asset($manifest['resources/css/app.css']['file']) }}">
-        <script src="{{ asset($manifest['resources/js/app.js']['file']) }}" defer></script>
+        <script src="{{ asset($manifest['resources/js/app.js']['file']) }}" defer></script> -->
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
