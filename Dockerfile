@@ -17,6 +17,13 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+
+# Install Composer dependencies
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Laravel dependencies
+RUN composer install --no-dev --optimize-autoloader
+
 # Set permissions (use chmod to ensure the right file permissions)
 RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
