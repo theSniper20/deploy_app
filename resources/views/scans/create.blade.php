@@ -24,7 +24,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="service_id" class="form-label">Materiel utilisé</label>
+                    <label for="service_id" class="form-label">Service utilisé</label>
                     <select name="service_id" id="service_id" class="form-control">
                         <option value="">Choisissez un service</option>
                         @foreach ($services as $service)
